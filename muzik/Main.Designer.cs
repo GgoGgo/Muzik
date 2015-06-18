@@ -56,7 +56,7 @@
             this.cb_is_trim = new System.Windows.Forms.CheckBox();
             this.cb_is_loop = new System.Windows.Forms.CheckBox();
             this.FX = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.LED = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.NODES.SuspendLayout();
@@ -68,7 +68,7 @@
             this.l1_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_0.Location = new System.Drawing.Point(4, 17);
+            this.l1_0.Location = new System.Drawing.Point(13, 17);
             this.l1_0.Margin = new System.Windows.Forms.Padding(0);
             this.l1_0.Name = "l1_0";
             this.l1_0.Size = new System.Drawing.Size(100, 100);
@@ -83,7 +83,7 @@
             this.l1_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_1.Location = new System.Drawing.Point(124, 17);
+            this.l1_1.Location = new System.Drawing.Point(133, 17);
             this.l1_1.Margin = new System.Windows.Forms.Padding(0);
             this.l1_1.Name = "l1_1";
             this.l1_1.Size = new System.Drawing.Size(100, 100);
@@ -98,7 +98,7 @@
             this.l1_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_2.Location = new System.Drawing.Point(242, 17);
+            this.l1_2.Location = new System.Drawing.Point(251, 17);
             this.l1_2.Margin = new System.Windows.Forms.Padding(0);
             this.l1_2.Name = "l1_2";
             this.l1_2.Size = new System.Drawing.Size(100, 100);
@@ -113,7 +113,7 @@
             this.l1_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_3.Location = new System.Drawing.Point(364, 17);
+            this.l1_3.Location = new System.Drawing.Point(367, 17);
             this.l1_3.Margin = new System.Windows.Forms.Padding(0);
             this.l1_3.Name = "l1_3";
             this.l1_3.Size = new System.Drawing.Size(100, 100);
@@ -128,7 +128,7 @@
             this.l1_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_4.Location = new System.Drawing.Point(494, 17);
+            this.l1_4.Location = new System.Drawing.Point(487, 17);
             this.l1_4.Margin = new System.Windows.Forms.Padding(0);
             this.l1_4.Name = "l1_4";
             this.l1_4.Size = new System.Drawing.Size(100, 100);
@@ -187,7 +187,7 @@
             this.l3_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l3_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_0.Location = new System.Drawing.Point(85, 244);
+            this.l3_0.Location = new System.Drawing.Point(133, 244);
             this.l3_0.Margin = new System.Windows.Forms.Padding(0);
             this.l3_0.Name = "l3_0";
             this.l3_0.Size = new System.Drawing.Size(100, 100);
@@ -202,7 +202,7 @@
             this.l3_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l3_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_1.Location = new System.Drawing.Point(203, 244);
+            this.l3_1.Location = new System.Drawing.Point(251, 244);
             this.l3_1.Margin = new System.Windows.Forms.Padding(0);
             this.l3_1.Name = "l3_1";
             this.l3_1.Size = new System.Drawing.Size(100, 100);
@@ -217,7 +217,7 @@
             this.l3_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l3_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_2.Location = new System.Drawing.Point(318, 244);
+            this.l3_2.Location = new System.Drawing.Point(367, 244);
             this.l3_2.Margin = new System.Windows.Forms.Padding(0);
             this.l3_2.Name = "l3_2";
             this.l3_2.Size = new System.Drawing.Size(100, 100);
@@ -232,7 +232,7 @@
             this.l3_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l3_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_3.Location = new System.Drawing.Point(438, 244);
+            this.l3_3.Location = new System.Drawing.Point(487, 244);
             this.l3_3.Margin = new System.Windows.Forms.Padding(0);
             this.l3_3.Name = "l3_3";
             this.l3_3.Size = new System.Drawing.Size(100, 100);
@@ -247,7 +247,7 @@
             this.l3_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l3_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_4.Location = new System.Drawing.Point(553, 244);
+            this.l3_4.Location = new System.Drawing.Point(606, 244);
             this.l3_4.Margin = new System.Windows.Forms.Padding(0);
             this.l3_4.Name = "l3_4";
             this.l3_4.Size = new System.Drawing.Size(100, 100);
@@ -262,7 +262,7 @@
             this.l2_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_0.Location = new System.Drawing.Point(4, 127);
+            this.l2_0.Location = new System.Drawing.Point(13, 127);
             this.l2_0.Margin = new System.Windows.Forms.Padding(0);
             this.l2_0.Name = "l2_0";
             this.l2_0.Size = new System.Drawing.Size(100, 100);
@@ -277,7 +277,7 @@
             this.l2_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_1.Location = new System.Drawing.Point(124, 127);
+            this.l2_1.Location = new System.Drawing.Point(133, 127);
             this.l2_1.Margin = new System.Windows.Forms.Padding(0);
             this.l2_1.Name = "l2_1";
             this.l2_1.Size = new System.Drawing.Size(100, 100);
@@ -292,7 +292,7 @@
             this.l2_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_2.Location = new System.Drawing.Point(242, 127);
+            this.l2_2.Location = new System.Drawing.Point(251, 127);
             this.l2_2.Margin = new System.Windows.Forms.Padding(0);
             this.l2_2.Name = "l2_2";
             this.l2_2.Size = new System.Drawing.Size(100, 100);
@@ -307,7 +307,7 @@
             this.l2_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_3.Location = new System.Drawing.Point(364, 127);
+            this.l2_3.Location = new System.Drawing.Point(367, 127);
             this.l2_3.Margin = new System.Windows.Forms.Padding(0);
             this.l2_3.Name = "l2_3";
             this.l2_3.Size = new System.Drawing.Size(100, 100);
@@ -322,7 +322,7 @@
             this.l2_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_4.Location = new System.Drawing.Point(494, 127);
+            this.l2_4.Location = new System.Drawing.Point(487, 127);
             this.l2_4.Margin = new System.Windows.Forms.Padding(0);
             this.l2_4.Name = "l2_4";
             this.l2_4.Size = new System.Drawing.Size(100, 100);
@@ -337,7 +337,7 @@
             this.l2_5.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_5.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_5.Location = new System.Drawing.Point(613, 127);
+            this.l2_5.Location = new System.Drawing.Point(606, 127);
             this.l2_5.Margin = new System.Windows.Forms.Padding(0);
             this.l2_5.Name = "l2_5";
             this.l2_5.Size = new System.Drawing.Size(100, 100);
@@ -352,7 +352,7 @@
             this.l2_6.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l2_6.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l2_6.Location = new System.Drawing.Point(731, 127);
+            this.l2_6.Location = new System.Drawing.Point(724, 127);
             this.l2_6.Margin = new System.Windows.Forms.Padding(0);
             this.l2_6.Name = "l2_6";
             this.l2_6.Size = new System.Drawing.Size(100, 100);
@@ -367,7 +367,7 @@
             this.l1_5.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_5.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_5.Location = new System.Drawing.Point(613, 17);
+            this.l1_5.Location = new System.Drawing.Point(606, 17);
             this.l1_5.Margin = new System.Windows.Forms.Padding(0);
             this.l1_5.Name = "l1_5";
             this.l1_5.Size = new System.Drawing.Size(100, 100);
@@ -382,7 +382,7 @@
             this.l1_6.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.l1_6.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l1_6.Location = new System.Drawing.Point(731, 17);
+            this.l1_6.Location = new System.Drawing.Point(724, 17);
             this.l1_6.Margin = new System.Windows.Forms.Padding(0);
             this.l1_6.Name = "l1_6";
             this.l1_6.Size = new System.Drawing.Size(100, 100);
@@ -396,7 +396,7 @@
             this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.NODES);
             this.tabControl1.Controls.Add(this.FX);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.LED);
             this.tabControl1.Location = new System.Drawing.Point(24, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -458,14 +458,14 @@
             this.FX.Text = "FX";
             this.FX.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // LED
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(889, 519);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.LED.Location = new System.Drawing.Point(4, 22);
+            this.LED.Name = "LED";
+            this.LED.Size = new System.Drawing.Size(889, 519);
+            this.LED.TabIndex = 2;
+            this.LED.Text = "LED";
+            this.LED.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
@@ -514,7 +514,7 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage NODES;
         private System.Windows.Forms.TabPage FX;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage LED;
         private System.Windows.Forms.CheckBox cb_is_trim;
         private System.Windows.Forms.CheckBox cb_is_loop;
         private System.Windows.Forms.TextBox tb_trimInterval;

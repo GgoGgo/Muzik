@@ -10,7 +10,6 @@ using NAudio.Wave.SampleProviders;
 
 namespace muzik
 {
-    // read this code later
     class AudioPlaybackEngine : IDisposable
     {
         private readonly IWavePlayer outputDevice;
@@ -65,16 +64,22 @@ namespace muzik
     {
         public float[] AudioData { get; private set; }
         public WaveFormat WaveFormat { get; private set; }
+        private static int fileCount = 0;   // this is for resampling wav file to 44100
         public CachedSound(string audioFileName)
         {
             using (var audioFileReader = new AudioFileReader(audioFileName))
             {
                 // TODO: could add resampling in here if required
-                WaveFormat = audioFileReader.WaveFormat;
-                var wholeFile = new List<float>((int)(audioFileReader.Length / 4));
-                var readBuffer = new float[audioFileReader.WaveFormat.SampleRate * audioFileReader.WaveFormat.Channels];
+                var resampler = new WdlResamplingSampleProvider(audioFileReader, 44100);
+                WaveFileWriter.CreateWaveFile16(@"C:\dev\test\"+fileCount.ToString()+".wav", resampler);
+                var resampled = new AudioFileReader(@"C:\dev\test\" + fileCount.ToString() + ".wav");
+                fileCount++;
+                
+                WaveFormat = resampled.WaveFormat;
+                var wholeFile = new List<float>((int)(resampled.Length / 4));
+                var readBuffer = new float[resampled.WaveFormat.SampleRate * resampled.WaveFormat.Channels];
                 int samplesRead;
-                while ((samplesRead = audioFileReader.Read(readBuffer, 0, readBuffer.Length)) > 0)
+                while ((samplesRead = resampled.Read(readBuffer, 0, readBuffer.Length)) > 0)
                 {
                     wholeFile.AddRange(readBuffer.Take(samplesRead));
                 }

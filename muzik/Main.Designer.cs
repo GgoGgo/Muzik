@@ -56,10 +56,12 @@
             this.cb_is_trim = new System.Windows.Forms.CheckBox();
             this.cb_is_loop = new System.Windows.Forms.CheckBox();
             this.FX = new System.Windows.Forms.TabPage();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.LED = new System.Windows.Forms.TabPage();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.NODES.SuspendLayout();
+            this.FX.SuspendLayout();
             this.SuspendLayout();
             // 
             // l1_0
@@ -67,7 +69,7 @@
             this.l1_0.AllowDrop = true;
             this.l1_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_0.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_0.Location = new System.Drawing.Point(13, 17);
             this.l1_0.Margin = new System.Windows.Forms.Padding(0);
             this.l1_0.Name = "l1_0";
@@ -82,7 +84,7 @@
             this.l1_1.AllowDrop = true;
             this.l1_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_1.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_1.Location = new System.Drawing.Point(133, 17);
             this.l1_1.Margin = new System.Windows.Forms.Padding(0);
             this.l1_1.Name = "l1_1";
@@ -97,7 +99,7 @@
             this.l1_2.AllowDrop = true;
             this.l1_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_2.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_2.Location = new System.Drawing.Point(251, 17);
             this.l1_2.Margin = new System.Windows.Forms.Padding(0);
             this.l1_2.Name = "l1_2";
@@ -112,7 +114,7 @@
             this.l1_3.AllowDrop = true;
             this.l1_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_3.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_3.Location = new System.Drawing.Point(367, 17);
             this.l1_3.Margin = new System.Windows.Forms.Padding(0);
             this.l1_3.Name = "l1_3";
@@ -127,7 +129,7 @@
             this.l1_4.AllowDrop = true;
             this.l1_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_4.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_4.Location = new System.Drawing.Point(487, 17);
             this.l1_4.Margin = new System.Windows.Forms.Padding(0);
             this.l1_4.Name = "l1_4";
@@ -186,8 +188,8 @@
             this.l3_0.AllowDrop = true;
             this.l3_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l3_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_0.Location = new System.Drawing.Point(133, 244);
+            this.l3_0.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l3_0.Location = new System.Drawing.Point(14, 241);
             this.l3_0.Margin = new System.Windows.Forms.Padding(0);
             this.l3_0.Name = "l3_0";
             this.l3_0.Size = new System.Drawing.Size(100, 100);
@@ -201,8 +203,8 @@
             this.l3_1.AllowDrop = true;
             this.l3_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l3_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_1.Location = new System.Drawing.Point(251, 244);
+            this.l3_1.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l3_1.Location = new System.Drawing.Point(132, 241);
             this.l3_1.Margin = new System.Windows.Forms.Padding(0);
             this.l3_1.Name = "l3_1";
             this.l3_1.Size = new System.Drawing.Size(100, 100);
@@ -216,8 +218,8 @@
             this.l3_2.AllowDrop = true;
             this.l3_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l3_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_2.Location = new System.Drawing.Point(367, 244);
+            this.l3_2.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l3_2.Location = new System.Drawing.Point(248, 241);
             this.l3_2.Margin = new System.Windows.Forms.Padding(0);
             this.l3_2.Name = "l3_2";
             this.l3_2.Size = new System.Drawing.Size(100, 100);
@@ -231,8 +233,8 @@
             this.l3_3.AllowDrop = true;
             this.l3_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l3_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_3.Location = new System.Drawing.Point(487, 244);
+            this.l3_3.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l3_3.Location = new System.Drawing.Point(368, 241);
             this.l3_3.Margin = new System.Windows.Forms.Padding(0);
             this.l3_3.Name = "l3_3";
             this.l3_3.Size = new System.Drawing.Size(100, 100);
@@ -246,8 +248,8 @@
             this.l3_4.AllowDrop = true;
             this.l3_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l3_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l3_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.l3_4.Location = new System.Drawing.Point(606, 244);
+            this.l3_4.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l3_4.Location = new System.Drawing.Point(487, 241);
             this.l3_4.Margin = new System.Windows.Forms.Padding(0);
             this.l3_4.Name = "l3_4";
             this.l3_4.Size = new System.Drawing.Size(100, 100);
@@ -261,7 +263,7 @@
             this.l2_0.AllowDrop = true;
             this.l2_0.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_0.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_0.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_0.Location = new System.Drawing.Point(13, 127);
             this.l2_0.Margin = new System.Windows.Forms.Padding(0);
             this.l2_0.Name = "l2_0";
@@ -276,7 +278,7 @@
             this.l2_1.AllowDrop = true;
             this.l2_1.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_1.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_1.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_1.Location = new System.Drawing.Point(133, 127);
             this.l2_1.Margin = new System.Windows.Forms.Padding(0);
             this.l2_1.Name = "l2_1";
@@ -291,7 +293,7 @@
             this.l2_2.AllowDrop = true;
             this.l2_2.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_2.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_2.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_2.Location = new System.Drawing.Point(251, 127);
             this.l2_2.Margin = new System.Windows.Forms.Padding(0);
             this.l2_2.Name = "l2_2";
@@ -306,7 +308,7 @@
             this.l2_3.AllowDrop = true;
             this.l2_3.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_3.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_3.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_3.Location = new System.Drawing.Point(367, 127);
             this.l2_3.Margin = new System.Windows.Forms.Padding(0);
             this.l2_3.Name = "l2_3";
@@ -321,7 +323,7 @@
             this.l2_4.AllowDrop = true;
             this.l2_4.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_4.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_4.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_4.Location = new System.Drawing.Point(487, 127);
             this.l2_4.Margin = new System.Windows.Forms.Padding(0);
             this.l2_4.Name = "l2_4";
@@ -336,7 +338,7 @@
             this.l2_5.AllowDrop = true;
             this.l2_5.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_5.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_5.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_5.Location = new System.Drawing.Point(606, 127);
             this.l2_5.Margin = new System.Windows.Forms.Padding(0);
             this.l2_5.Name = "l2_5";
@@ -351,7 +353,7 @@
             this.l2_6.AllowDrop = true;
             this.l2_6.Appearance = System.Windows.Forms.Appearance.Button;
             this.l2_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l2_6.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l2_6.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l2_6.Location = new System.Drawing.Point(724, 127);
             this.l2_6.Margin = new System.Windows.Forms.Padding(0);
             this.l2_6.Name = "l2_6";
@@ -366,7 +368,7 @@
             this.l1_5.AllowDrop = true;
             this.l1_5.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_5.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_5.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_5.Location = new System.Drawing.Point(606, 17);
             this.l1_5.Margin = new System.Windows.Forms.Padding(0);
             this.l1_5.Name = "l1_5";
@@ -381,7 +383,7 @@
             this.l1_6.AllowDrop = true;
             this.l1_6.Appearance = System.Windows.Forms.Appearance.Button;
             this.l1_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.l1_6.Font = new System.Drawing.Font("Oslo", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.l1_6.Font = new System.Drawing.Font("Consolas", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.l1_6.Location = new System.Drawing.Point(724, 17);
             this.l1_6.Margin = new System.Windows.Forms.Padding(0);
             this.l1_6.Name = "l1_6";
@@ -450,6 +452,7 @@
             // 
             // FX
             // 
+            this.FX.Controls.Add(this.progressBar1);
             this.FX.Location = new System.Drawing.Point(4, 22);
             this.FX.Name = "FX";
             this.FX.Padding = new System.Windows.Forms.Padding(3);
@@ -457,6 +460,14 @@
             this.FX.TabIndex = 1;
             this.FX.Text = "FX";
             this.FX.UseVisualStyleBackColor = true;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(44, 83);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 0;
+            this.progressBar1.Value = 50;
             // 
             // LED
             // 
@@ -478,11 +489,13 @@
             this.Name = "Main";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.NODES.ResumeLayout(false);
             this.NODES.PerformLayout();
+            this.FX.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -518,6 +531,7 @@
         private System.Windows.Forms.CheckBox cb_is_trim;
         private System.Windows.Forms.CheckBox cb_is_loop;
         private System.Windows.Forms.TextBox tb_trimInterval;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

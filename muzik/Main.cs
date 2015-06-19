@@ -49,47 +49,7 @@ namespace muzik
 
         private void Main_KeyPress(object sender, KeyPressEventArgs e)
         {
-            switch (e.KeyChar)
-            {
-                case 'w':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[0]); break;
-                case 'e':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[1]); break;
-                case 'r':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[2]); break;
-                case 'u':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[3]); break;
-                case 'i':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[4]); break;
-                case 'o':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[5]); break;
-                case 'p':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[6]); break;
-                case 's':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[7]); break;
-                case 'd':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[8]); break;
-                case 'f':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
-                case 'j':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
-                case 'k':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
-                case 'l':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
-                case ';':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
-                case 'x':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
-                case 'c':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
-                case 'v':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
-                case 'm':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
-                case ',':
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
-            }
+            
         }
 
         private void songSelectButton_Click(object sender, EventArgs e)
@@ -191,6 +151,51 @@ namespace muzik
             catch ( Exception ex )
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.W:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[0]); break;
+                case Keys.E:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[1]); break;
+                case Keys.R:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[2]); break;
+                case Keys.U:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[3]); break;
+                case Keys.I:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[4]); break;
+                case Keys.O:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[5]); break;
+                case Keys.P:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[6]); break;
+                case Keys.S:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[7]); break;
+                case Keys.D:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[8]); break;
+                case Keys.F:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
+                case Keys.J:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
+                case Keys.K:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
+                case Keys.L:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
+                case Keys.OemSemicolon:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
+                case Keys.X:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
+                case Keys.C:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
+                case Keys.V:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
+                case Keys.M:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
+                case Keys.Oemcomma:
+                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
             }
         }
     }

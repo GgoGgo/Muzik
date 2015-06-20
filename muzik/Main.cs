@@ -16,45 +16,35 @@ namespace muzik
 {
     public partial class Main : Form
     {
-        CachedSound[] cachedSound;
+        List<Button> button;
 
         public Main()
         {
             InitializeComponent();
-            
-            for( int i = 0; i < 19; i++)
-            {
-                cachedSound = new CachedSound[19];
-            }
+            button = new List<Button>();
         }
 
         private void Main_Load(object sender, EventArgs e)
         {
+            // allow drag-drop at main form -> it cannot be set in design view
             this.AllowDrop = true;
-            tabControl1.AllowDrop = true;
-            groupBox1.AllowDrop = true;
 
-
-            foreach (Control c in groupBox1.Controls)
+            // find radio button and progressBar then put them into button(List)
+            for(int i = 0; i < 19; i++)
             {
-                if (c.GetType() == typeof(RadioButton))
-                {
-                    RadioButton rb = c as RadioButton;
-                    rb.DragDrop += new DragEventHandler(radioButtons_DragDrop);
-                    rb.DragEnter += new DragEventHandler(radioButtons_DragEnter);
-                }
+                RadioButton rb = (RadioButton)groupBox1.Controls.Find("l" + (i / 7+1) + "_" + i % 7, false)[0];
+                ProgressBar pb = (ProgressBar)groupBox1.Controls.Find("l" + (i / 7 + 1) + "_" + i % 7+"_bar", false)[0];
+                rb.DragDrop += new DragEventHandler(radioButtons_DragDrop);
+                rb.DragEnter += new DragEventHandler(radioButtons_DragEnter);
+                button.Insert(i, new Button(rb, pb));
             }
-            l1_0.Select();
-        }
-
-        private void Main_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
+            l1_0.Select();  // select default radiobutton
+            timer1.Start();
         }
 
         private void songSelectButton_Click(object sender, EventArgs e)
         {
-            if( openFileDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if( openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 string filePath = openFileDialog1.FileName;
                 int lastIndex = filePath.LastIndexOf('\\');
@@ -62,10 +52,11 @@ namespace muzik
 
                 try
                 {
-                    if (!fileName.EndsWith(".wav")) throw new ArgumentOutOfRangeException("Invalid parameter");
+                    if (!fileName.EndsWith(".wav") && !fileName.EndsWith(".aif")) throw new ArgumentOutOfRangeException("Invalid parameter");
+
                     int radioTag = getSelectedRadioButtonTagIn(groupBox1, fileName);
 
-                    if (radioTag > -1) throw new ArgumentNullException("null control");
+                    if (radioTag == -1) throw new ArgumentNullException("null control");
                     setAudioSourceByPathAt(radioTag, filePath);
                 }
                 catch (ArgumentNullException ex)
@@ -146,11 +137,11 @@ namespace muzik
         {
             try
             {
-                cachedSound[ tag ] = new CachedSound( filePath );
+                button.ElementAt(tag).setCachedSound(new CachedSound(filePath));
             }
             catch ( Exception ex )
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("At setAudioSouceByPathAt: "+ex.Message);
             }
         }
 
@@ -159,43 +150,73 @@ namespace muzik
             switch (e.KeyCode)
             {
                 case Keys.W:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[0]); break;
+                    button.ElementAt<Button>(0).playSample(); break;
                 case Keys.E:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[1]); break;
+                    button.ElementAt<Button>(1).playSample(); break;
                 case Keys.R:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[2]); break;
+                    button.ElementAt<Button>(2).playSample(); break;
                 case Keys.U:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[3]); break;
+                    button.ElementAt<Button>(3).playSample(); break;
                 case Keys.I:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[4]); break;
+                    button.ElementAt<Button>(4).playSample(); break;
                 case Keys.O:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[5]); break;
+                    button.ElementAt<Button>(5).playSample(); break;
                 case Keys.P:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[6]); break;
+                    button.ElementAt<Button>(6).playSample(); break;
                 case Keys.S:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[7]); break;
+                    button.ElementAt<Button>(7).playSample(); break;
                 case Keys.D:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[8]); break;
+                    button.ElementAt<Button>(8).playSample(); break;
                 case Keys.F:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
+                    button.ElementAt<Button>(9).playSample(); break;
                 case Keys.J:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
+                    button.ElementAt<Button>(10).playSample(); break;
                 case Keys.K:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
+                    button.ElementAt<Button>(11).playSample(); break;
                 case Keys.L:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
+                    button.ElementAt<Button>(12).playSample(); break;
                 case Keys.OemSemicolon:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
+                    button.ElementAt<Button>(13).playSample(); break;
                 case Keys.X:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[9]); break;
+                    button.ElementAt<Button>(14).playSample(); break;
                 case Keys.C:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[10]); break;
+                    button.ElementAt<Button>(15).playSample(); break;
                 case Keys.V:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[11]); break;
+                    button.ElementAt<Button>(16).playSample(); break;
                 case Keys.M:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[12]); break;
+                    button.ElementAt<Button>(17).playSample(); break;
                 case Keys.Oemcomma:
-                    AudioPlaybackEngine.Instance.PlaySound(cachedSound[13]); break;
+                    button.ElementAt<Button>(18).playSample(); break;
+            }
+
+
+        }
+        List<T> GetControlByName<T>(Control controlToSearch, string nameOfControlsToFind, bool searchDescendants) where T : class
+        {
+            List<T> result;
+            result = new List<T>();
+            foreach (Control c in controlToSearch.Controls)
+            {
+                if (c.Name == nameOfControlsToFind && c.GetType() == typeof(T))
+                {
+                    result.Add(c as T);
+                }
+                if (searchDescendants)
+                {
+                    result.AddRange(GetControlByName<T>(c, nameOfControlsToFind, true));
+                }
+            }
+            return result;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            for(int i = 0; i < 19; i++)
+            {
+                if(button.ElementAt(i).is_playing == false)
+                {
+                    button.ElementAt(i).stopProgressBar();
+                }
             }
         }
     }

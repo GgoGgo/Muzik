@@ -28,14 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.l1_0 = new System.Windows.Forms.RadioButton();
             this.l1_1 = new System.Windows.Forms.RadioButton();
             this.l1_2 = new System.Windows.Forms.RadioButton();
             this.l1_3 = new System.Windows.Forms.RadioButton();
             this.l1_4 = new System.Windows.Forms.RadioButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.songSelectButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.l3_4_bar = new System.Windows.Forms.ProgressBar();
+            this.l3_3_bar = new System.Windows.Forms.ProgressBar();
+            this.l3_2_bar = new System.Windows.Forms.ProgressBar();
+            this.l3_1_bar = new System.Windows.Forms.ProgressBar();
+            this.l3_0_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_6_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_5_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_4_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_3_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_2_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_1_bar = new System.Windows.Forms.ProgressBar();
+            this.l2_0_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_6_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_5_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_4_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_3_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_2_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_1_bar = new System.Windows.Forms.ProgressBar();
+            this.l1_0_bar = new System.Windows.Forms.ProgressBar();
             this.l3_0 = new System.Windows.Forms.RadioButton();
             this.l3_1 = new System.Windows.Forms.RadioButton();
             this.l3_2 = new System.Windows.Forms.RadioButton();
@@ -56,12 +75,12 @@
             this.cb_is_trim = new System.Windows.Forms.CheckBox();
             this.cb_is_loop = new System.Windows.Forms.CheckBox();
             this.FX = new System.Windows.Forms.TabPage();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.LED = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.NODES.SuspendLayout();
-            this.FX.SuspendLayout();
             this.SuspendLayout();
             // 
             // l1_0
@@ -139,10 +158,6 @@
             this.l1_4.Text = "l1_4";
             this.l1_4.UseVisualStyleBackColor = true;
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // songSelectButton
             // 
             this.songSelectButton.Font = new System.Drawing.Font("Oslo", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,6 +172,25 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.l3_4_bar);
+            this.groupBox1.Controls.Add(this.l3_3_bar);
+            this.groupBox1.Controls.Add(this.l3_2_bar);
+            this.groupBox1.Controls.Add(this.l3_1_bar);
+            this.groupBox1.Controls.Add(this.l3_0_bar);
+            this.groupBox1.Controls.Add(this.l2_6_bar);
+            this.groupBox1.Controls.Add(this.l2_5_bar);
+            this.groupBox1.Controls.Add(this.l2_4_bar);
+            this.groupBox1.Controls.Add(this.l2_3_bar);
+            this.groupBox1.Controls.Add(this.l2_2_bar);
+            this.groupBox1.Controls.Add(this.l2_1_bar);
+            this.groupBox1.Controls.Add(this.l2_0_bar);
+            this.groupBox1.Controls.Add(this.l1_6_bar);
+            this.groupBox1.Controls.Add(this.l1_5_bar);
+            this.groupBox1.Controls.Add(this.l1_4_bar);
+            this.groupBox1.Controls.Add(this.l1_3_bar);
+            this.groupBox1.Controls.Add(this.l1_2_bar);
+            this.groupBox1.Controls.Add(this.l1_1_bar);
+            this.groupBox1.Controls.Add(this.l1_0_bar);
             this.groupBox1.Controls.Add(this.l3_0);
             this.groupBox1.Controls.Add(this.l3_1);
             this.groupBox1.Controls.Add(this.l3_2);
@@ -182,6 +216,142 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // l3_4_bar
+            // 
+            this.l3_4_bar.Location = new System.Drawing.Point(487, 318);
+            this.l3_4_bar.Name = "l3_4_bar";
+            this.l3_4_bar.Size = new System.Drawing.Size(100, 23);
+            this.l3_4_bar.TabIndex = 37;
+            // 
+            // l3_3_bar
+            // 
+            this.l3_3_bar.Location = new System.Drawing.Point(368, 318);
+            this.l3_3_bar.Name = "l3_3_bar";
+            this.l3_3_bar.Size = new System.Drawing.Size(100, 23);
+            this.l3_3_bar.TabIndex = 36;
+            // 
+            // l3_2_bar
+            // 
+            this.l3_2_bar.Location = new System.Drawing.Point(247, 318);
+            this.l3_2_bar.Name = "l3_2_bar";
+            this.l3_2_bar.Size = new System.Drawing.Size(100, 23);
+            this.l3_2_bar.TabIndex = 35;
+            // 
+            // l3_1_bar
+            // 
+            this.l3_1_bar.Location = new System.Drawing.Point(132, 318);
+            this.l3_1_bar.Name = "l3_1_bar";
+            this.l3_1_bar.Size = new System.Drawing.Size(100, 23);
+            this.l3_1_bar.TabIndex = 34;
+            // 
+            // l3_0_bar
+            // 
+            this.l3_0_bar.Location = new System.Drawing.Point(13, 318);
+            this.l3_0_bar.Name = "l3_0_bar";
+            this.l3_0_bar.Size = new System.Drawing.Size(100, 23);
+            this.l3_0_bar.TabIndex = 33;
+            // 
+            // l2_6_bar
+            // 
+            this.l2_6_bar.Location = new System.Drawing.Point(724, 204);
+            this.l2_6_bar.Name = "l2_6_bar";
+            this.l2_6_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_6_bar.TabIndex = 32;
+            // 
+            // l2_5_bar
+            // 
+            this.l2_5_bar.Location = new System.Drawing.Point(606, 204);
+            this.l2_5_bar.Name = "l2_5_bar";
+            this.l2_5_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_5_bar.TabIndex = 31;
+            // 
+            // l2_4_bar
+            // 
+            this.l2_4_bar.Location = new System.Drawing.Point(487, 204);
+            this.l2_4_bar.Name = "l2_4_bar";
+            this.l2_4_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_4_bar.TabIndex = 30;
+            // 
+            // l2_3_bar
+            // 
+            this.l2_3_bar.Location = new System.Drawing.Point(367, 204);
+            this.l2_3_bar.Name = "l2_3_bar";
+            this.l2_3_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_3_bar.TabIndex = 29;
+            // 
+            // l2_2_bar
+            // 
+            this.l2_2_bar.Location = new System.Drawing.Point(251, 204);
+            this.l2_2_bar.Name = "l2_2_bar";
+            this.l2_2_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_2_bar.TabIndex = 28;
+            // 
+            // l2_1_bar
+            // 
+            this.l2_1_bar.Location = new System.Drawing.Point(132, 204);
+            this.l2_1_bar.Name = "l2_1_bar";
+            this.l2_1_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_1_bar.TabIndex = 27;
+            // 
+            // l2_0_bar
+            // 
+            this.l2_0_bar.Location = new System.Drawing.Point(14, 204);
+            this.l2_0_bar.Name = "l2_0_bar";
+            this.l2_0_bar.Size = new System.Drawing.Size(100, 23);
+            this.l2_0_bar.TabIndex = 26;
+            // 
+            // l1_6_bar
+            // 
+            this.l1_6_bar.Location = new System.Drawing.Point(724, 94);
+            this.l1_6_bar.Name = "l1_6_bar";
+            this.l1_6_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_6_bar.TabIndex = 25;
+            // 
+            // l1_5_bar
+            // 
+            this.l1_5_bar.Location = new System.Drawing.Point(606, 94);
+            this.l1_5_bar.Name = "l1_5_bar";
+            this.l1_5_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_5_bar.TabIndex = 24;
+            // 
+            // l1_4_bar
+            // 
+            this.l1_4_bar.Location = new System.Drawing.Point(487, 94);
+            this.l1_4_bar.Name = "l1_4_bar";
+            this.l1_4_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_4_bar.TabIndex = 23;
+            // 
+            // l1_3_bar
+            // 
+            this.l1_3_bar.Location = new System.Drawing.Point(367, 94);
+            this.l1_3_bar.Name = "l1_3_bar";
+            this.l1_3_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_3_bar.TabIndex = 22;
+            // 
+            // l1_2_bar
+            // 
+            this.l1_2_bar.Location = new System.Drawing.Point(251, 94);
+            this.l1_2_bar.Name = "l1_2_bar";
+            this.l1_2_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_2_bar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.l1_2_bar.TabIndex = 21;
+            // 
+            // l1_1_bar
+            // 
+            this.l1_1_bar.Location = new System.Drawing.Point(132, 94);
+            this.l1_1_bar.Name = "l1_1_bar";
+            this.l1_1_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_1_bar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.l1_1_bar.TabIndex = 20;
+            // 
+            // l1_0_bar
+            // 
+            this.l1_0_bar.Location = new System.Drawing.Point(13, 94);
+            this.l1_0_bar.Name = "l1_0_bar";
+            this.l1_0_bar.Size = new System.Drawing.Size(100, 23);
+            this.l1_0_bar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            this.l1_0_bar.TabIndex = 19;
             // 
             // l3_0
             // 
@@ -452,7 +622,6 @@
             // 
             // FX
             // 
-            this.FX.Controls.Add(this.progressBar1);
             this.FX.Location = new System.Drawing.Point(4, 22);
             this.FX.Name = "FX";
             this.FX.Padding = new System.Windows.Forms.Padding(3);
@@ -460,14 +629,6 @@
             this.FX.TabIndex = 1;
             this.FX.Text = "FX";
             this.FX.UseVisualStyleBackColor = true;
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(44, 83);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 0;
-            this.progressBar1.Value = 50;
             // 
             // LED
             // 
@@ -477,6 +638,15 @@
             this.LED.TabIndex = 2;
             this.LED.Text = "LED";
             this.LED.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 10;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Main
             // 
@@ -490,12 +660,10 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Main_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
             this.groupBox1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.NODES.ResumeLayout(false);
             this.NODES.PerformLayout();
-            this.FX.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -507,7 +675,6 @@
         private System.Windows.Forms.RadioButton l1_2;
         private System.Windows.Forms.RadioButton l1_3;
         private System.Windows.Forms.RadioButton l1_4;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button songSelectButton;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton l2_0;
@@ -531,7 +698,27 @@
         private System.Windows.Forms.CheckBox cb_is_trim;
         private System.Windows.Forms.CheckBox cb_is_loop;
         private System.Windows.Forms.TextBox tb_trimInterval;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar l1_0_bar;
+        private System.Windows.Forms.ProgressBar l1_2_bar;
+        private System.Windows.Forms.ProgressBar l1_1_bar;
+        private System.Windows.Forms.ProgressBar l3_4_bar;
+        private System.Windows.Forms.ProgressBar l3_3_bar;
+        private System.Windows.Forms.ProgressBar l3_2_bar;
+        private System.Windows.Forms.ProgressBar l3_1_bar;
+        private System.Windows.Forms.ProgressBar l3_0_bar;
+        private System.Windows.Forms.ProgressBar l2_6_bar;
+        private System.Windows.Forms.ProgressBar l2_5_bar;
+        private System.Windows.Forms.ProgressBar l2_4_bar;
+        private System.Windows.Forms.ProgressBar l2_3_bar;
+        private System.Windows.Forms.ProgressBar l2_2_bar;
+        private System.Windows.Forms.ProgressBar l2_1_bar;
+        private System.Windows.Forms.ProgressBar l2_0_bar;
+        private System.Windows.Forms.ProgressBar l1_6_bar;
+        private System.Windows.Forms.ProgressBar l1_5_bar;
+        private System.Windows.Forms.ProgressBar l1_4_bar;
+        private System.Windows.Forms.ProgressBar l1_3_bar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

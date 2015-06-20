@@ -64,14 +64,18 @@ namespace muzik
     {
         public float[] AudioData { get; private set; }
         public WaveFormat WaveFormat { get; private set; }
+
+        public readonly double playTime;    // music playtime for several feature
         private static int fileCount = 0;   // this is for resampling wav file to 44100
         public CachedSound(string audioFileName)
         {
             using (var audioFileReader = new AudioFileReader(audioFileName))
             {
-                // TODO: could add resampling in here if required
+                // TODO: could add resampling in here if required did it
+                playTime = audioFileReader.TotalTime.TotalMilliseconds;
+
                 var resampler = new WdlResamplingSampleProvider(audioFileReader, 44100);
-                WaveFileWriter.CreateWaveFile16(@"C:\dev\test\"+fileCount.ToString()+".wav", resampler);
+                WaveFileWriter.CreateWaveFile16(@"C:\dev\test\"+fileCount.ToString() + ".wav", resampler);
                 var resampled = new AudioFileReader(@"C:\dev\test\" + fileCount.ToString() + ".wav");
                 fileCount++;
                 

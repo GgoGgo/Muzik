@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.l1_0 = new System.Windows.Forms.RadioButton();
             this.l1_1 = new System.Windows.Forms.RadioButton();
             this.l1_2 = new System.Windows.Forms.RadioButton();
@@ -823,7 +824,7 @@
             this.tabControl1.Controls.Add(this.NODES);
             this.tabControl1.Controls.Add(this.FX);
             this.tabControl1.Controls.Add(this.LED);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(24, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(897, 545);
@@ -832,6 +833,7 @@
             // NODES
             // 
             this.NODES.AllowDrop = true;
+            this.NODES.BackColor = System.Drawing.Color.DimGray;
             this.NODES.Controls.Add(this.tb_trimInterval);
             this.NODES.Controls.Add(this.cb_is_trim);
             this.NODES.Controls.Add(this.groupBox1);
@@ -842,7 +844,6 @@
             this.NODES.Size = new System.Drawing.Size(889, 519);
             this.NODES.TabIndex = 0;
             this.NODES.Text = "NODES";
-            this.NODES.UseVisualStyleBackColor = true;
             // 
             // tb_trimInterval
             // 
@@ -959,8 +960,10 @@
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(953, 569);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "Main";
             this.Text = "Form1";

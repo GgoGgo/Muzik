@@ -134,9 +134,12 @@ namespace muzik
                 if(cb_is_trim.Checked == true)
                 {
                     Trim.TrimWavFile(filePath, @"C:\dev\test\a"+i.ToString()+".wav", 0, Convert.ToInt32(tb_trimInterval.Text));
-                    MessageBox.Show(tb_trimInterval.Text);
                     button.ElementAt(tag).setCachedSound(@"C:\dev\test\a" + i.ToString() + ".wav");
                     i++;
+                }
+                else
+                {
+                    button.ElementAt(tag).setCachedSound(filePath);
                 }
                 
             }

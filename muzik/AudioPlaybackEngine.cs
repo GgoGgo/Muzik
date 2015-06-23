@@ -71,9 +71,10 @@ namespace muzik
         {
             using (var audioFileReader = new AudioFileReader(audioFileName))
             {
-                // TODO: could add resampling in here if required did it
+                // save play time of audio
                 playTime = audioFileReader.TotalTime.TotalMilliseconds;
 
+                // resample and save it to another path
                 var resampler = new WdlResamplingSampleProvider(audioFileReader, 44100);
                 WaveFileWriter.CreateWaveFile16(@"C:\dev\test\"+fileCount.ToString() + ".wav", resampler);
                 var resampled = new AudioFileReader(@"C:\dev\test\" + fileCount.ToString() + ".wav");

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using NAudio;
 using NAudio.Wave;
 using NAudio.Wave.SampleProviders;
+using System.Runtime.InteropServices;
 
 namespace muzik
 {
@@ -34,12 +35,13 @@ namespace muzik
             {
                 RadioButton rb = (RadioButton)groupBox1.Controls.Find("l" + (i / 7+1) + "_" + i % 7, false)[0];
                 ProgressBar pb = (ProgressBar)groupBox1.Controls.Find("l" + (i / 7 + 1) + "_" + i % 7+"_bar", false)[0];
+                CheckBox cb = (CheckBox)groupBox1.Controls.Find("l" + (i / 7 + 1) + "_" + i % 7 + "_cb", false)[0];
                 rb.DragDrop += new DragEventHandler(radioButtons_DragDrop);
                 rb.DragEnter += new DragEventHandler(radioButtons_DragEnter);
-                button.Insert(i, new Button(rb, pb));
+                button.Insert(i, new Button(rb, pb, cb));
             }
             l1_0.Select();  // select default radiobutton
-            timer1.Start();
+            timer1.Start(); // start timer to stop progress bar
         }
 
         private void songSelectButton_Click(object sender, EventArgs e)
@@ -52,7 +54,7 @@ namespace muzik
 
                 try
                 {
-                    if (!fileName.EndsWith(".wav") && !fileName.EndsWith(".aif")) throw new ArgumentOutOfRangeException("Invalid parameter");
+                    if (!fileName.EndsWith(".wav")) throw new ArgumentOutOfRangeException("Invalid parameter");
 
                     int radioTag = getSelectedRadioButtonTagIn(groupBox1, fileName);
 
@@ -107,7 +109,7 @@ namespace muzik
             {
                 if (!fileName.EndsWith(".wav")) throw new System.ArgumentException("Invalid parameter");
 
-                rb.Text = rb.Name + "\n\n" + fileName;
+                rb.Text = rb.Name + "\n" + fileName;
                 setAudioSourceByPathAt(Convert.ToInt32(rb.Tag), filePath[0]);
             }
             catch(Exception ex)
@@ -125,7 +127,7 @@ namespace muzik
                     RadioButton rb = c as RadioButton;
                     if (rb.Checked)
                     {
-                        rb.Text = rb.Name + "\n\n" + fileName;
+                        rb.Text = rb.Name + "\n" + fileName;
                         return Convert.ToInt32(rb.Tag.ToString());
                     }
                 }
@@ -137,7 +139,7 @@ namespace muzik
         {
             try
             {
-                button.ElementAt(tag).setCachedSound(new CachedSound(filePath));
+                button.ElementAt(tag).setCachedSound(filePath);
             }
             catch ( Exception ex )
             {
@@ -188,25 +190,6 @@ namespace muzik
                 case Keys.Oemcomma:
                     button.ElementAt<Button>(18).playSample(); break;
             }
-
-
-        }
-        List<T> GetControlByName<T>(Control controlToSearch, string nameOfControlsToFind, bool searchDescendants) where T : class
-        {
-            List<T> result;
-            result = new List<T>();
-            foreach (Control c in controlToSearch.Controls)
-            {
-                if (c.Name == nameOfControlsToFind && c.GetType() == typeof(T))
-                {
-                    result.Add(c as T);
-                }
-                if (searchDescendants)
-                {
-                    result.AddRange(GetControlByName<T>(c, nameOfControlsToFind, true));
-                }
-            }
-            return result;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -218,6 +201,34 @@ namespace muzik
                     button.ElementAt(i).stopProgressBar();
                 }
             }
+        }
+
+
+        private const int APPCOMMAND_VOLUME_MUTE = 0x80000;
+        private const int APPCOMMAND_VOLUME_UP = 0xA0000;
+        private const int APPCOMMAND_VOLUME_DOWN = 0x90000;
+        private const int WM_APPCOMMAND = 0x319;
+
+        [DllImport("user32.dll")]
+        public static extern IntPtr SendMessageW(IntPtr hWnd, int Msg,
+            IntPtr wParam, IntPtr lParam);
+
+        private void btnMute_Click(object sender, EventArgs e)
+        {
+            SendMessageW(this.Handle, WM_APPCOMMAND, this.Handle,
+                (IntPtr)APPCOMMAND_VOLUME_MUTE);
+        }
+
+        private void btnDecVol_Click(object sender, EventArgs e)
+        {
+            SendMessageW(this.Handle, WM_APPCOMMAND, this.Handle,
+                (IntPtr)APPCOMMAND_VOLUME_DOWN);
+        }
+
+        private void btnIncVol_Click(object sender, EventArgs e)
+        {
+            SendMessageW(this.Handle, WM_APPCOMMAND, this.Handle,
+                (IntPtr)APPCOMMAND_VOLUME_UP);
         }
     }
 }

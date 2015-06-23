@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AudioPlaybackEngine.cs" />
     <Compile Include="Button.cs" />
+    <Compile Include="LoopStream.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>

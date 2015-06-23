@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,16 +14,24 @@ namespace muzik
         private RadioButton radioButton;
         private ProgressBar progressBar;
         private CachedSound cachedSound;
+        private WaveFileReader reader;
+        private LoopStream loop;
+        private WaveOut waveOut;
+        private CheckBox checkBox;
 
-        public void setCachedSound( CachedSound cachedSound)
+        public void setCachedSound( string filePath )
         {
-            this.cachedSound = cachedSound;
+            this.cachedSound = new CachedSound(filePath);
+            reader = new WaveFileReader(filePath);
+            loop = new LoopStream(reader);
+
+
             progressBar.Maximum = (int)cachedSound.playTime;
         }
-
+        
         public bool is_playing { set; get; }
 
-        public Button(RadioButton radioButton, ProgressBar progressBar)
+        public Button(RadioButton radioButton, ProgressBar progressBar, CheckBox checkBox)
         {
             progressBar.MarqueeAnimationSpeed = 0;
             t = new System.Threading.Timer(new System.Threading.TimerCallback(delegate (object state){
@@ -30,9 +39,22 @@ namespace muzik
             }));
             this.radioButton = radioButton;
             this.progressBar = progressBar;
+            this.checkBox = checkBox;
         }
 
         public void playSample()
+        {
+            if(checkBox.Checked == true)
+            {
+                playSampleLoopToggle();
+            }
+            else
+            {
+                playSampleOnce();
+            }
+        }
+
+        public void playSampleOnce()
         {
             if( !is_playing )
             {
@@ -43,10 +65,29 @@ namespace muzik
             }
         }
 
+        public void playSampleLoopToggle()
+        {
+            if (!is_playing)
+            {
+                waveOut = new WaveOut();
+                loop.Position = 0;
+                waveOut.Init(loop);
+                waveOut.Play();
+                is_playing = true;
+                startProgressBar();
+            } else
+            {
+                is_playing = false;
+                waveOut.Stop();
+                waveOut.Dispose();
+                waveOut = null;
+            }
+        }
+
         public void startProgressBar()
         {
             progressBar.Style = ProgressBarStyle.Marquee;
-            progressBar.MarqueeAnimationSpeed = 10;
+            progressBar.MarqueeAnimationSpeed = 1;
         }
 
         public void stopProgressBar()
@@ -54,7 +95,5 @@ namespace muzik
             progressBar.Style = ProgressBarStyle.Continuous;
             progressBar.MarqueeAnimationSpeed = 0;
         }
-
-        
     }
 }

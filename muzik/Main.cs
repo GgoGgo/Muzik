@@ -1,16 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using NAudio;
-using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
 using System.Runtime.InteropServices;
 
 namespace muzik
@@ -135,11 +126,19 @@ namespace muzik
             return -1;
         }
 
+        int i = 0;
         private void setAudioSourceByPathAt(int tag, string filePath)
         {
             try
             {
-                button.ElementAt(tag).setCachedSound(filePath);
+                if(cb_is_trim.Checked == true)
+                {
+                    Trim.TrimWavFile(filePath, @"C:\dev\test\a"+i.ToString()+".wav", 0, Convert.ToInt32(tb_trimInterval.Text));
+                    MessageBox.Show(tb_trimInterval.Text);
+                    button.ElementAt(tag).setCachedSound(@"C:\dev\test\a" + i.ToString() + ".wav");
+                    i++;
+                }
+                
             }
             catch ( Exception ex )
             {

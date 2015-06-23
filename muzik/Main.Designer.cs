@@ -93,15 +93,15 @@
             this.tb_trimInterval = new System.Windows.Forms.TextBox();
             this.cb_is_trim = new System.Windows.Forms.CheckBox();
             this.FX = new System.Windows.Forms.TabPage();
+            this.DEC = new System.Windows.Forms.Button();
+            this.INC = new System.Windows.Forms.Button();
+            this.MUTE = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.fx_tb_echo = new System.Windows.Forms.TrackBar();
             this.LED = new System.Windows.Forms.TabPage();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label2 = new System.Windows.Forms.Label();
-            this.MUTE = new System.Windows.Forms.Button();
-            this.INC = new System.Windows.Forms.Button();
-            this.DEC = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.NODES.SuspendLayout();
@@ -260,6 +260,7 @@
             this.groupBox1.Size = new System.Drawing.Size(834, 424);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
             // 
             // l3_4_cb
             // 
@@ -486,7 +487,7 @@
             // 
             // l3_2_bar
             // 
-            this.l3_2_bar.Location = new System.Drawing.Point(247, 354);
+            this.l3_2_bar.Location = new System.Drawing.Point(248, 354);
             this.l3_2_bar.Name = "l3_2_bar";
             this.l3_2_bar.Size = new System.Drawing.Size(100, 23);
             this.l3_2_bar.TabIndex = 35;
@@ -500,7 +501,7 @@
             // 
             // l3_0_bar
             // 
-            this.l3_0_bar.Location = new System.Drawing.Point(13, 354);
+            this.l3_0_bar.Location = new System.Drawing.Point(14, 354);
             this.l3_0_bar.Name = "l3_0_bar";
             this.l3_0_bar.Size = new System.Drawing.Size(100, 23);
             this.l3_0_bar.TabIndex = 33;
@@ -542,14 +543,14 @@
             // 
             // l2_1_bar
             // 
-            this.l2_1_bar.Location = new System.Drawing.Point(132, 224);
+            this.l2_1_bar.Location = new System.Drawing.Point(133, 224);
             this.l2_1_bar.Name = "l2_1_bar";
             this.l2_1_bar.Size = new System.Drawing.Size(100, 23);
             this.l2_1_bar.TabIndex = 27;
             // 
             // l2_0_bar
             // 
-            this.l2_0_bar.Location = new System.Drawing.Point(14, 224);
+            this.l2_0_bar.Location = new System.Drawing.Point(13, 224);
             this.l2_0_bar.Name = "l2_0_bar";
             this.l2_0_bar.Size = new System.Drawing.Size(100, 23);
             this.l2_0_bar.TabIndex = 26;
@@ -592,7 +593,7 @@
             // 
             // l1_1_bar
             // 
-            this.l1_1_bar.Location = new System.Drawing.Point(132, 94);
+            this.l1_1_bar.Location = new System.Drawing.Point(133, 94);
             this.l1_1_bar.Name = "l1_1_bar";
             this.l1_1_bar.Size = new System.Drawing.Size(100, 23);
             this.l1_1_bar.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -822,7 +823,7 @@
             this.tabControl1.Controls.Add(this.NODES);
             this.tabControl1.Controls.Add(this.FX);
             this.tabControl1.Controls.Add(this.LED);
-            this.tabControl1.Location = new System.Drawing.Point(24, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(897, 545);
@@ -877,6 +878,46 @@
             this.FX.Text = "FX";
             this.FX.UseVisualStyleBackColor = true;
             // 
+            // DEC
+            // 
+            this.DEC.Location = new System.Drawing.Point(279, 58);
+            this.DEC.Name = "DEC";
+            this.DEC.Size = new System.Drawing.Size(75, 23);
+            this.DEC.TabIndex = 6;
+            this.DEC.Text = "DEC";
+            this.DEC.UseVisualStyleBackColor = true;
+            this.DEC.Click += new System.EventHandler(this.btnDecVol_Click);
+            // 
+            // INC
+            // 
+            this.INC.Location = new System.Drawing.Point(198, 58);
+            this.INC.Name = "INC";
+            this.INC.Size = new System.Drawing.Size(75, 23);
+            this.INC.TabIndex = 5;
+            this.INC.Text = "INC";
+            this.INC.UseVisualStyleBackColor = true;
+            this.INC.Click += new System.EventHandler(this.btnIncVol_Click);
+            // 
+            // MUTE
+            // 
+            this.MUTE.Location = new System.Drawing.Point(117, 58);
+            this.MUTE.Name = "MUTE";
+            this.MUTE.Size = new System.Drawing.Size(75, 23);
+            this.MUTE.TabIndex = 4;
+            this.MUTE.Text = "MUTE";
+            this.MUTE.UseVisualStyleBackColor = true;
+            this.MUTE.Click += new System.EventHandler(this.btnMute_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Oslo", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 57);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 32);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "VOL";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -912,46 +953,6 @@
             // 
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Oslo", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 57);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 32);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "VOL";
-            // 
-            // MUTE
-            // 
-            this.MUTE.Location = new System.Drawing.Point(117, 58);
-            this.MUTE.Name = "MUTE";
-            this.MUTE.Size = new System.Drawing.Size(75, 23);
-            this.MUTE.TabIndex = 4;
-            this.MUTE.Text = "MUTE";
-            this.MUTE.UseVisualStyleBackColor = true;
-            this.MUTE.Click += new System.EventHandler(this.btnMute_Click);
-            // 
-            // INC
-            // 
-            this.INC.Location = new System.Drawing.Point(198, 58);
-            this.INC.Name = "INC";
-            this.INC.Size = new System.Drawing.Size(75, 23);
-            this.INC.TabIndex = 5;
-            this.INC.Text = "INC";
-            this.INC.UseVisualStyleBackColor = true;
-            this.INC.Click += new System.EventHandler(this.btnIncVol_Click);
-            // 
-            // DEC
-            // 
-            this.DEC.Location = new System.Drawing.Point(279, 58);
-            this.DEC.Name = "DEC";
-            this.DEC.Size = new System.Drawing.Size(75, 23);
-            this.DEC.TabIndex = 6;
-            this.DEC.Text = "DEC";
-            this.DEC.UseVisualStyleBackColor = true;
-            this.DEC.Click += new System.EventHandler(this.btnDecVol_Click);
             // 
             // Main
             // 
